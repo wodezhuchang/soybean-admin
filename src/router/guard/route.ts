@@ -24,12 +24,14 @@ export function createRouteGuard(router: Router) {
     const loginRoute: RouteKey = 'login';
     const noAuthorizationRoute: RouteKey = '403';
 
-    const isLogin = Boolean(localStg.get('token'));
+    // 多角色改造：真实登录/权限检查
+    const isLogin = authStore.isLogin;
     const needLogin = !to.meta.constant;
     const routeRoles = to.meta.roles || [];
 
-    const hasRole = authStore.userInfo.roles.some(role => routeRoles.includes(role));
-    const hasAuth = authStore.isStaticSuper || !routeRoles.length || hasRole;
+    const hasRole =
+      routeRoles.length === 0 || authStore.userInfo.roles.some(role => routeRoles.includes(role));
+    const hasAuth = authStore.isStaticSuper || hasRole;
 
     // if it is login route when logged in, then switch to the root page
     if (to.name === loginRoute && isLogin) {
@@ -63,6 +65,7 @@ export function createRouteGuard(router: Router) {
  */
 async function initRoute(to: RouteLocationNormalized): Promise<RouteLocationRaw | null> {
   const routeStore = useRouteStore();
+  const authStore = useAuthStore();
 
   const notFoundRoute: RouteKey = 'not-found';
   const isNotFoundRoute = to.name === notFoundRoute;
@@ -84,7 +87,8 @@ async function initRoute(to: RouteLocationNormalized): Promise<RouteLocationRaw 
     return location;
   }
 
-  const isLogin = Boolean(localStg.get('token'));
+  // 多角色改造：真实登录检查（token 未从本地恢复前，以本地存储为准，避免刷新掉登录）
+  const isLogin = authStore.isLogin || Boolean(localStg.get('token'));
 
   if (!isLogin) {
     // if the user is not logged in and the route is a constant route but not the "not-found" route, then it is allowed to access.

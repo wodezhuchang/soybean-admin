@@ -12,9 +12,9 @@ export const generatedRoutes: GeneratedRoute[] = [
     component: 'layout.blank$view.403',
     meta: {
       title: '403',
-      i18nKey: 'route.403',
       constant: true,
-      hideInMenu: true
+      hideInMenu: true,
+      i18nKey: 'route.403'
     }
   },
   {
@@ -23,9 +23,9 @@ export const generatedRoutes: GeneratedRoute[] = [
     component: 'layout.blank$view.404',
     meta: {
       title: '404',
-      i18nKey: 'route.404',
       constant: true,
-      hideInMenu: true
+      hideInMenu: true,
+      i18nKey: 'route.404'
     }
   },
   {
@@ -34,9 +34,60 @@ export const generatedRoutes: GeneratedRoute[] = [
     component: 'layout.blank$view.500',
     meta: {
       title: '500',
-      i18nKey: 'route.500',
       constant: true,
-      hideInMenu: true
+      hideInMenu: true,
+      i18nKey: 'route.500'
+    }
+  },
+  {
+    name: 'demo',
+    path: '/demo',
+    component: 'layout.base',
+    meta: {
+      title: 'demo',
+      icon: 'mdi:flask-outline',
+      i18nKey: 'route.demo'
+    },
+    children: [
+      {
+        name: 'demo_chat-panel',
+        path: '/demo/chat-panel',
+        component: 'view.demo_chat-panel',
+        meta: {
+          title: 'demo_chat-panel',
+          i18nKey: 'route.demo_chat-panel'
+        }
+      },
+      {
+        name: 'demo_evidence-timeline',
+        path: '/demo/evidence-timeline',
+        component: 'view.demo_evidence-timeline',
+        meta: {
+          title: 'demo_evidence-timeline',
+          i18nKey: 'route.demo_evidence-timeline'
+        }
+      },
+      {
+        name: 'demo_pipeline-flow',
+        path: '/demo/pipeline-flow',
+        component: 'view.demo_pipeline-flow',
+        meta: {
+          title: 'demo_pipeline-flow',
+          i18nKey: 'route.demo_pipeline-flow'
+        }
+      }
+    ]
+  },
+  {
+    name: 'evaluate',
+    path: '/evaluate',
+    component: 'layout.base$view.evaluate',
+    meta: {
+      title: '试讲评价',
+      icon: 'mdi:video-box',
+      order: 2,
+      i18nKey: 'route.evaluate',
+      roles: ['admin', 'student']
     }
   },
   {
@@ -44,10 +95,10 @@ export const generatedRoutes: GeneratedRoute[] = [
     path: '/home',
     component: 'layout.base$view.home',
     meta: {
-      title: 'home',
-      i18nKey: 'route.home',
+      title: '工作台',
       icon: 'mdi:monitor-dashboard',
-      order: 1
+      order: 1,
+      i18nKey: 'route.home'
     }
   },
   {
@@ -57,10 +108,22 @@ export const generatedRoutes: GeneratedRoute[] = [
     props: true,
     meta: {
       title: 'iframe-page',
-      i18nKey: 'route.iframe-page',
       constant: true,
       hideInMenu: true,
-      keepAlive: true
+      keepAlive: true,
+      i18nKey: 'route.iframe-page'
+    }
+  },
+  {
+    name: 'knowledge',
+    path: '/knowledge',
+    component: 'layout.base$view.knowledge',
+    meta: {
+      title: '知识库管理',
+      icon: 'mdi:book-open-page-variant',
+      order: 3,
+      i18nKey: 'route.knowledge',
+      roles: ['admin', 'teacher']
     }
   },
   {
@@ -70,9 +133,126 @@ export const generatedRoutes: GeneratedRoute[] = [
     props: true,
     meta: {
       title: 'login',
-      i18nKey: 'route.login',
       constant: true,
-      hideInMenu: true
+      hideInMenu: true,
+      i18nKey: 'route.login'
     }
+  },
+  {
+    name: 'student',
+    path: '/student',
+    component: 'layout.base',
+    meta: {
+      title: 'student',
+      icon: 'mdi:school-outline',
+      i18nKey: 'route.student',
+      roles: ['admin', 'student']
+    },
+    children: [
+      {
+        name: 'student_chat',
+        path: '/student/chat',
+        component: 'view.student_chat',
+        meta: {
+          title: '试讲陪练对话',
+          i18nKey: 'route.student_chat',
+          roles: ['admin', 'student']
+        }
+      },
+      {
+        name: 'student_growth',
+        path: '/student/growth',
+        component: 'view.student_growth',
+        meta: {
+          title: 'student_growth',
+          i18nKey: 'route.student_growth',
+          roles: ['admin', 'student']
+        }
+      },
+      {
+        name: 'student_report',
+        path: '/student/report',
+        component: 'view.student_report',
+        meta: {
+          title: 'student_report',
+          i18nKey: 'route.student_report',
+          roles: ['admin', 'student']
+        }
+      },
+      {
+        name: 'student_upload',
+        path: '/student/upload',
+        component: 'view.student_upload',
+        meta: {
+          title: 'student_upload',
+          i18nKey: 'route.student_upload',
+          roles: ['admin', 'student']
+        }
+      },
+      {
+        name: 'student_workbench',
+        path: '/student/workbench',
+        component: 'view.student_workbench',
+        meta: {
+          title: 'student_workbench',
+          i18nKey: 'route.student_workbench',
+          roles: ['admin', 'student']
+        }
+      }
+    ]
+  },
+  {
+    name: 'teacher',
+    path: '/teacher',
+    component: 'layout.base',
+    meta: {
+      title: '老师看板',
+      icon: 'mdi:chart-box',
+      order: 4,
+      i18nKey: 'route.teacher',
+      roles: ['admin', 'teacher']
+    },
+    children: [
+      {
+        name: 'teacher_dashboard',
+        path: '/teacher/dashboard',
+        component: 'view.teacher_dashboard',
+        meta: {
+          title: 'teacher_dashboard',
+          i18nKey: 'route.teacher_dashboard',
+          roles: ['admin', 'teacher']
+        }
+      },
+      {
+        name: 'teacher_review',
+        path: '/teacher/review',
+        component: 'view.teacher_review',
+        meta: {
+          title: 'teacher_review',
+          i18nKey: 'route.teacher_review',
+          roles: ['admin', 'teacher']
+        }
+      },
+      {
+        name: 'teacher_review-list',
+        path: '/teacher/review-list',
+        component: 'view.teacher_review-list',
+        meta: {
+          title: 'teacher_review-list',
+          i18nKey: 'route.teacher_review-list',
+          roles: ['admin', 'teacher']
+        }
+      },
+      {
+        name: 'teacher_students',
+        path: '/teacher/students',
+        component: 'view.teacher_students',
+        meta: {
+          title: 'teacher_students',
+          i18nKey: 'route.teacher_students',
+          roles: ['admin', 'teacher']
+        }
+      }
+    ]
   }
 ];

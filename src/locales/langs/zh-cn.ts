@@ -1,6 +1,6 @@
 const local: App.I18n.Schema = {
   system: {
-    title: 'Soybean 管理系统',
+    title: '师范生试讲智能评价Agent',
     updateTitle: '系统版本更新通知',
     updateContent: '检测到系统有新版本发布，是否立即刷新页面？',
     updateConfirm: '立即刷新',
@@ -225,7 +225,24 @@ const local: App.I18n.Schema = {
     404: '页面不存在',
     500: '服务器错误',
     'iframe-page': '外链页面',
-    home: '首页'
+    home: '首页',
+    demo: '演示',
+    'demo_evidence-timeline': '证据时间轴',
+    'demo_pipeline-flow': '全链路可视化',
+    'demo_chat-panel': 'AI 对话',
+    evaluate: '试讲评价',
+    knowledge: '知识库',
+    teacher: '教师端',
+    teacher_dashboard: '班级学情看板',
+    teacher_students: '学生洞察',
+    'teacher_review-list': '待复评列表',
+    teacher_review: '复评',
+    student: '学生端',
+    student_workbench: '试讲工作台',
+    student_report: '试讲报告',
+    student_upload: '试讲视频分析',
+    student_growth: '成长曲线',
+    student_chat: '试讲陪练对话'
   },
   page: {
     login: {

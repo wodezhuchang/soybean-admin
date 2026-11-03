@@ -1,6 +1,6 @@
 const local: App.I18n.Schema = {
   system: {
-    title: 'SoybeanAdmin',
+    title: 'Teaching AI Evaluator',
     updateTitle: 'System Version Update Notification',
     updateContent: 'A new version of the system has been detected. Do you want to refresh the page immediately?',
     updateConfirm: 'Refresh immediately',
@@ -229,7 +229,24 @@ const local: App.I18n.Schema = {
     404: 'Page Not Found',
     500: 'Server Error',
     'iframe-page': 'Iframe',
-    home: 'Home'
+    home: 'Home',
+    demo: 'Demo',
+    'demo_evidence-timeline': 'Evidence Timeline',
+    'demo_pipeline-flow': 'Pipeline Flow',
+    'demo_chat-panel': 'Chat Panel',
+    evaluate: 'Evaluate',
+    knowledge: 'Knowledge',
+    teacher: 'Teacher',
+    teacher_dashboard: 'Class Dashboard',
+    teacher_students: 'Student Insights',
+    'teacher_review-list': 'Review Queue',
+    teacher_review: 'Review',
+    student: 'Student',
+    student_workbench: 'Studio',
+    student_report: 'Student Report',
+    student_upload: 'Video Analysis',
+    student_growth: 'Growth',
+    student_chat: 'Trial Chat'
   },
   page: {
     login: {

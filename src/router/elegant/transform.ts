@@ -166,9 +166,26 @@ const routeMap: RouteMap = {
   "403": "/403",
   "404": "/404",
   "500": "/500",
+  "demo": "/demo",
+  "demo_chat-panel": "/demo/chat-panel",
+  "demo_evidence-timeline": "/demo/evidence-timeline",
+  "demo_pipeline-flow": "/demo/pipeline-flow",
+  "evaluate": "/evaluate",
   "home": "/home",
   "iframe-page": "/iframe-page/:url",
-  "login": "/login/:module(pwd-login|code-login|register|reset-pwd|bind-wechat)?"
+  "knowledge": "/knowledge",
+  "login": "/login/:module(pwd-login|code-login|register|reset-pwd|bind-wechat)?",
+  "student": "/student",
+  "student_chat": "/student/chat",
+  "student_growth": "/student/growth",
+  "student_report": "/student/report",
+  "student_upload": "/student/upload",
+  "student_workbench": "/student/workbench",
+  "teacher": "/teacher",
+  "teacher_dashboard": "/teacher/dashboard",
+  "teacher_review": "/teacher/review",
+  "teacher_review-list": "/teacher/review-list",
+  "teacher_students": "/teacher/students"
 };
 
 /**

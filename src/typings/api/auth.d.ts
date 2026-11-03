@@ -15,6 +15,11 @@ declare namespace Api {
       userName: string;
       roles: string[];
       buttons: string[];
+      /** 多角色改造：admin / student / teacher */
+      role?: string;
+      /** real / sandbox */
+      accountType?: string;
+      org?: string;
     }
   }
 }
